@@ -1,7 +1,17 @@
 aid: 3srobotics
 name: 3S robotics
-description: '3S robotics is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: '3S robotics (Shanghai Shengshi Weisheng Technology Co., Ltd. / 上海昇视唯盛科技有限公司)
+  is a Chinese intelligent-robotics manufacturer founded in 2020 and headquartered in the Songjiang
+  district of Shanghai, with a smart factory in the Haining Economic Development Zone, Zhejiang. It is
+  a member company of the listed Harbin Institute of Technology intelligent-robotics group (哈工智能),
+  and its majority-held subsidiary Hagong Hyundai (哈工现代, HGXD) builds general-purpose industrial
+  robots. The company develops an in-house "AI + 3D + ROBOT" stack — machine-vision cameras, motion
+  control, and offline path-planning software — packaged as task-specific intelligent robots for
+  welding, grinding and assembly, marketed as needing no teach-pendant programming. Its flagship line
+  is a 3D-vision intelligent welding robot aimed at steel-structure, tunnel arch, rail-transit and
+  heavy-equipment fabrication. The software it ships is embedded machine-side control and vision
+  tooling sold with the hardware; the company publishes no public developer program, API, SDK or
+  machine-readable interface contract.'
 url: https://raw.githubusercontent.com/api-evangelist/3srobotics/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +22,13 @@ created: '2026-09-05'
 modified: '2026-09-05'
 tags:
 - Company
+- Robotics
+- Industrial Robots
+- Manufacturing
+- Machine Vision
+- Welding Automation
+- Industrial Automation
+- Hardware
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,59 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/3srobotics-domain-security.yml
+- type: LLMsTxt
+  url: llms/3srobotics-llms.txt
 - type: Website
+  url: https://3srobotics.com/
+- type: About
+  url: https://3srobotics.com/profile.html
+- type: Products
+  url: https://3srobotics.com/universal.html
+- type: Software
+  url: https://3srobotics.com/software.html
+- type: CaseStudies
+  url: https://3srobotics.com/crec.html
+- type: Blog
+  url: https://3srobotics.com/news.html
+- type: Support
+  url: https://3srobotics.com/why.html
+- type: Contact
+  url: https://3srobotics.com/contact.html
+- type: Careers
+  url: https://3srobotics.com/join.html
+- type: Downloads
+  url: https://3srobotics.com/download.html
+- type: Subsidiary
+  url: https://www.hgxd.cn/
+- type: SecondaryMarket
   url: https://equityzen.com/company/3srobotics
+x-enrichment:
+  date: '2026-09-05'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    3S robotics sells industrial welding, grinding and assembly robots whose "AI + 3D + ROBOT"
+    vision and offline-programming software runs on the machine and ships with the hardware —
+    3srobotics.com is a 14-page static Bootstrap brochure whose only gated area is a member
+    product-manual download, there is no developer portal, SDK or API subdomain (api., docs.,
+    developer. and open. all fail to resolve in DNS), and no GitHub organization exists.
+  evidence:
+  - url: https://3srobotics.com/software.html
+    status: 200
+  - url: https://3srobotics.com/download.html
+    status: 200
+  - url: https://3srobotics.com/openapi.json
+    status: 404
+  - url: https://3srobotics.com/.well-known/agent-card.json
+    status: 404
+  - url: https://3srobotics.com/sitemap.xml
+    status: 404
+  - url: https://github.com/3srobotics
+    status: 404
+  checked: '2026-09-05'

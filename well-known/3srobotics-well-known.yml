@@ -1,0 +1,56 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Live probes of the named /.well-known/ path list against every host this record knows —
+  the registrable domain 3srobotics.com and www.3srobotics.com. The company registers no API
+  baseURL and publishes no OpenAPI, so there are no servers[] hosts and no separate docs or
+  console host to probe; the corporate site is the only surface.
+note: >-
+  Every named path returned an nginx 404 on both hosts. This file records a measured ABSENCE.
+  No WellKnown or SecurityTxt pointer is wired into apis.yml, because no probe returned a
+  document — the pointer would assert the provider serves a surface it does not serve.
+hosts:
+- host: 3srobotics.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+- host: www.3srobotics.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+agent_card_probe:
+  note: >-
+    A2A agent-card discovery was probed as part of STEP 0b and missed on both the current and
+    the pre-0.3 path. No a2a/ artifact is written and no AgentCard pointer is emitted — an agent
+    card is search-only and must never be authored on a provider's behalf.
+  probes:
+  - url: https://3srobotics.com/.well-known/agent-card.json
+    status: 404
+  - url: https://3srobotics.com/.well-known/agent.json
+    status: 404
